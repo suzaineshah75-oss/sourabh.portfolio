@@ -8,74 +8,90 @@
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-<style>
-body {margin:0;}
-</style>
 </head>
 <body>
 <div id="root"></div>
 
 <script type="text/babel">
 function App(){
-return (
-<div className="font-sans bg-gray-50 text-gray-800">
+const [dark,setDark]=React.useState(true);
 
-{/* Hero Section */}
-<section className="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-r from-black to-gray-700 text-white p-6">
-<img src="your-photo.jpg" className="rounded-full w-40 h-40 mb-4 shadow-lg"/>
-<h1 className="text-4xl font-bold mb-2">Sourabh Paswan</h1>
-<p className="text-lg mb-4">Customer Support Specialist</p>
-<a href="resume.pdf" download className="bg-white text-black px-6 py-2 rounded-full font-semibold mr-3">Download Resume</a>
-<a href="#contact" className="border border-white px-6 py-2 rounded-full">Contact Me</a>
+return (
+<div className={dark?"bg-gray-900 text-white":"bg-white text-gray-900"}>
+
+{/* Navbar */}
+<nav className="flex justify-between p-5 shadow-lg sticky top-0 bg-opacity-90 backdrop-blur">
+<h1 className="font-bold text-xl">Sourabh Paswan</h1>
+<button
+onClick={()=>setDark(!dark)}
+className="border px-4 py-1 rounded-full">
+{dark?"Light Mode":"Dark Mode"}
+</button>
+</nav>
+
+{/* Hero */}
+<section className="min-h-screen flex flex-col items-center justify-center text-center p-6">
+<img src="your-photo.jpg" alt="profile" className="w-40 h-40 rounded-full mb-5 shadow-xl object-cover"/>
+<h1 className="text-4xl font-bold mb-3">Customer Support Specialist</h1>
+<p className="max-w-xl mb-5 opacity-80">
+2+ years experience supporting global customers (Amazon, Insurance BPO),
+specialized in CRM handling, issue resolution, logistics support, and customer satisfaction improvement.
+</p>
+<div className="flex gap-4">
+<a href="resume.pdf" download className="bg-blue-600 px-6 py-2 rounded-full text-white shadow-lg hover:scale-105 transition">Download Resume</a>
+<a href="#contact" className="border px-6 py-2 rounded-full hover:scale-105 transition">Hire Me</a>
+</div>
 </section>
 
-{/* About */}
+{/* Recruiter Focus */}
 <section className="p-10 max-w-5xl mx-auto">
-<h2 className="text-3xl font-bold mb-4">About Me</h2>
-<p>
-Customer Support Specialist with 2+ years BPO experience handling voice, chat,
-and logistics support for international customers. Strong communication,
-problem-solving, and CRM expertise.
-</p>
+<h2 className="text-3xl font-bold mb-5">Why Hire Me</h2>
+<ul className="space-y-3 opacity-90">
+<li>✔ 2+ years international customer support experience</li>
+<li>✔ Strong communication (English + Hindi)</li>
+<li>✔ CRM tools, logistics & financial support expertise</li>
+<li>✔ Proven customer satisfaction improvement</li>
+<li>✔ Remote work experience</li>
+</ul>
 </section>
 
 {/* Projects */}
-<section className="bg-white p-10">
-<h2 className="text-3xl font-bold mb-6 text-center">Projects</h2>
+<section className="p-10 bg-opacity-10">
+<h2 className="text-3xl font-bold text-center mb-8">Professional Highlights</h2>
 <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-<div className="shadow-lg p-5 rounded-xl">
-<h3 className="font-bold">Customer Support Optimization</h3>
-<p>Improved ticket resolution workflows and satisfaction.</p>
+<div className="p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+<h3 className="font-bold mb-2">Amazon Support</h3>
+<p>Handled North America customer queries, logistics and financial support.</p>
 </div>
-<div className="shadow-lg p-5 rounded-xl">
-<h3 className="font-bold">CRM Documentation System</h3>
-<p>Implemented better tracking for customer interactions.</p>
+<div className="p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+<h3 className="font-bold mb-2">Insurance Process</h3>
+<p>Resolved policy and claims issues improving customer experience.</p>
 </div>
-<div className="shadow-lg p-5 rounded-xl">
-<h3 className="font-bold">Training Program</h3>
-<p>Guided new associates on customer handling processes.</p>
+<div className="p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+<h3 className="font-bold mb-2">Team Training</h3>
+<p>Trained associates on CRM tools and customer handling skills.</p>
 </div>
 </div>
 </section>
 
 {/* Testimonials */}
-<section className="p-10 bg-gray-100">
+<section className="p-10">
 <h2 className="text-3xl font-bold text-center mb-6">Testimonials</h2>
-<div className="max-w-4xl mx-auto space-y-6">
-<div className="bg-white p-6 rounded-xl shadow">"Great communication skills and problem solving."</div>
-<div className="bg-white p-6 rounded-xl shadow">"Very professional support specialist."</div>
+<div className="max-w-3xl mx-auto space-y-4 opacity-80">
+<div className="p-5 rounded-xl shadow">"Excellent communication and professional attitude."</div>
+<div className="p-5 rounded-xl shadow">"Highly reliable support specialist."</div>
 </div>
 </section>
 
 {/* Contact */}
-<section id="contact" className="bg-black text-white p-10 text-center">
+<section id="contact" className="p-10 text-center">
 <h2 className="text-3xl font-bold mb-4">Contact</h2>
 <p>Email: adhyanshpaswan09@gmail.com</p>
-<p>Phone: +91 8103665109</p>
-<p>Indore, India</p>
+<p>Phone: +91 8103665109,9691352809</p>
+<p>Location: Indore, India</p>
 </section>
 
-<footer className="text-center p-4 bg-gray-900 text-white">
+<footer className="text-center p-4 opacity-70">
 © 2026 Sourabh Paswan Portfolio
 </footer>
 
