@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sourabh Paswan Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<style>
+body {margin:0;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+function App(){
+return (
+<div className="font-sans bg-gray-50 text-gray-800">
+
+{/* Hero Section */}
+<section className="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-r from-black to-gray-700 text-white p-6">
+<img src="your-photo.jpg" className="rounded-full w-40 h-40 mb-4 shadow-lg"/>
+<h1 className="text-4xl font-bold mb-2">Sourabh Paswan</h1>
+<p className="text-lg mb-4">Customer Support Specialist</p>
+<a href="resume.pdf" download className="bg-white text-black px-6 py-2 rounded-full font-semibold mr-3">Download Resume</a>
+<a href="#contact" className="border border-white px-6 py-2 rounded-full">Contact Me</a>
+</section>
+
+{/* About */}
+<section className="p-10 max-w-5xl mx-auto">
+<h2 className="text-3xl font-bold mb-4">About Me</h2>
+<p>
+Customer Support Specialist with 2+ years BPO experience handling voice, chat,
+and logistics support for international customers. Strong communication,
+problem-solving, and CRM expertise.
+</p>
+</section>
+
+{/* Projects */}
+<section className="bg-white p-10">
+<h2 className="text-3xl font-bold mb-6 text-center">Projects</h2>
+<div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+<div className="shadow-lg p-5 rounded-xl">
+<h3 className="font-bold">Customer Support Optimization</h3>
+<p>Improved ticket resolution workflows and satisfaction.</p>
+</div>
+<div className="shadow-lg p-5 rounded-xl">
+<h3 className="font-bold">CRM Documentation System</h3>
+<p>Implemented better tracking for customer interactions.</p>
+</div>
+<div className="shadow-lg p-5 rounded-xl">
+<h3 className="font-bold">Training Program</h3>
+<p>Guided new associates on customer handling processes.</p>
+</div>
+</div>
+</section>
+
+{/* Testimonials */}
+<section className="p-10 bg-gray-100">
+<h2 className="text-3xl font-bold text-center mb-6">Testimonials</h2>
+<div className="max-w-4xl mx-auto space-y-6">
+<div className="bg-white p-6 rounded-xl shadow">"Great communication skills and problem solving."</div>
+<div className="bg-white p-6 rounded-xl shadow">"Very professional support specialist."</div>
+</div>
+</section>
+
+{/* Contact */}
+<section id="contact" className="bg-black text-white p-10 text-center">
+<h2 className="text-3xl font-bold mb-4">Contact</h2>
+<p>Email: adhyanshpaswan09@gmail.com</p>
+<p>Phone: +91 8103665109</p>
+<p>Indore, India</p>
+</section>
+
+<footer className="text-center p-4 bg-gray-900 text-white">
+© 2026 Sourabh Paswan Portfolio
+</footer>
+
+</div>
+)}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
