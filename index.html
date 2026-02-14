@@ -3,97 +3,64 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sourabh Paswan | Premium Portfolio</title>
+<title>Sourabh Paswan | Portfolio</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-<script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-body {font-family:Inter,sans-serif;}
-.glass {background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:22px;}
-.heroGlow {background:radial-gradient(circle at center,#2563eb55,transparent 60%);} 
-.float {animation:float 6s ease-in-out infinite}
-@keyframes float {0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+body{font-family:Inter,sans-serif}
+.fadein{animation:fadein 1s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
 <div id="root"></div>
 
 <script type="text/babel">
-const { motion } = window['framer-motion'];
-
 function App(){
 const [dark,setDark]=React.useState(true);
 
 return (
-<div className={dark?"bg-black text-white":"bg-gray-100 text-black"}>
+<div className={dark?"bg-black text-white min-h-screen":"bg-gray-100 text-black min-h-screen"}>
 
-{/* NAVBAR */}
-<motion.nav initial={{y:-60,opacity:0}} animate={{y:0,opacity:1}} className="flex justify-between items-center px-10 py-5 sticky top-0 backdrop-blur z-50">
-<h1 className="text-2xl font-extrabold tracking-wide">Sourabh Paswan</h1>
+<nav className="flex justify-between items-center px-8 py-4 backdrop-blur sticky top-0">
+<h1 className="text-2xl font-bold">Sourabh Paswan</h1>
 <div className="flex gap-4">
-<button onClick={()=>setDark(!dark)} className="glass px-4 py-1 hover:scale-105 transition">Mode</button>
-<a href="https://wa.me/918103665109" target="_blank" className="bg-green-500 px-5 py-1 rounded-full hover:scale-105 transition">WhatsApp</a>
+<button onClick={()=>setDark(!dark)} className="border px-4 py-1 rounded">Mode</button>
+<a href="https://wa.me/918103665109" target="_blank" className="bg-green-500 px-4 py-1 rounded text-white">WhatsApp</a>
 </div>
-</motion.nav>
+</nav>
 
-{/* HERO */}
-<section className="min-h-screen flex flex-col justify-center items-center text-center heroGlow px-6">
-<motion.img initial={{scale:0}} animate={{scale:1}} transition={{duration:0.8}} src="your-photo.jpg" className="w-44 h-44 rounded-full shadow-2xl mb-6 object-cover float"/>
-<motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} className="text-6xl font-extrabold mb-4">Customer Experience Specialist</motion.h1>
-<motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.4}} className="max-w-xl opacity-80 mb-8 text-lg">
-Delivering world-class customer support with CRM expertise, strong communication, and global client handling.
-</motion.p>
-<div className="flex gap-5">
-<a href="resume.pdf" download className="bg-blue-600 px-8 py-3 rounded-full shadow-xl hover:scale-105 transition">Download Resume</a>
-<a href="#contact" className="glass px-8 py-3 hover:scale-105 transition">Hire Me</a>
+<section className="text-center py-20 fadein">
+<img src="your-photo.jpg" className="w-40 h-40 rounded-full mx-auto mb-6 object-cover shadow-xl"/>
+<h1 className="text-5xl font-bold mb-4">Customer Support Specialist</h1>
+<p className="max-w-xl mx-auto mb-6 opacity-80">
+2+ years BPO experience handling international customer support,
+CRM workflows, logistics queries and customer satisfaction improvement.
+</p>
+<a href="resume.pdf" download className="bg-blue-600 px-6 py-3 rounded-full text-white">Download Resume</a>
+</section>
+
+<section className="max-w-5xl mx-auto p-10 fadein">
+<h2 className="text-3xl font-bold mb-6 text-center">Core Expertise</h2>
+<div className="grid md:grid-cols-3 gap-6">
+<div className="p-6 border rounded">Voice Support</div>
+<div className="p-6 border rounded">Chat & Email Support</div>
+<div className="p-6 border rounded">CRM Operations</div>
 </div>
 </section>
 
-{/* EXPERTISE */}
-<section className="max-w-6xl mx-auto p-14">
-<h2 className="text-4xl font-bold text-center mb-12">Core Expertise</h2>
-<div className="grid md:grid-cols-3 gap-8">
-{[
-["Voice Support","International customer call handling."],
-["Chat & Email","Fast professional written support."],
-["CRM Operations","Ticketing, reporting & workflow optimization."]
-].map((item,i)=>(
-<motion.div key={i} initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="glass p-7 hover:scale-105 transition">
-<h3 className="font-bold mb-3">{item[0]}</h3>
-<p>{item[1]}</p>
-</motion.div>
-))}
-</div>
-</section>
-
-{/* IMPACT */}
-<section className="p-14">
-<h2 className="text-4xl font-bold text-center mb-10">Professional Impact</h2>
-<div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-{[
-"Improved customer satisfaction",
-"Amazon North America support",
-"Insurance process expertise",
-"Remote global teamwork"
-].map((t,i)=>(
-<motion.div key={i} initial={{opacity:0,x:-40}} whileInView={{opacity:1,x:0}} viewport={{once:true}} className="glass p-6">✔ {t}</motion.div>
-))}
-</div>
-</section>
-
-{/* CONTACT */}
-<section id="contact" className="text-center p-14">
-<motion.h2 initial={{opacity:0}} whileInView={{opacity:1}} className="text-4xl font-bold mb-6">Contact</motion.h2>
+<section id="contact" className="text-center py-16 fadein">
+<h2 className="text-3xl font-bold mb-4">Contact</h2>
 <p>Email: adhyanshpaswan09@gmail.com</p>
-<p>Phone: +91 8103665109, 9691352809</p>
+<p>Phone: +91 8103665109</p>
 <p>Indore, India</p>
 </section>
 
-<footer className="text-center p-6 opacity-60">
-© 2026 Sourabh Paswan Premium Portfolio
+<footer className="text-center py-6 opacity-70">
+© 2026 Sourabh Paswan Portfolio
 </footer>
 
 </div>
