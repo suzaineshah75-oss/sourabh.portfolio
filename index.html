@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sourabh Paswan Recruiter Portfolio</title>
+<title>Sourabh Paswan | Premium Portfolio</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-body {font-family:Poppins, sans-serif;}
-.glass {background:rgba(255,255,255,0.08); backdrop-filter:blur(18px); border-radius:20px; border:1px solid rgba(255,255,255,0.15);} 
-.fade {animation:fade 1.2s ease forwards;}
-@keyframes fade {from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
-.card3d:hover {transform:rotateY(8deg) scale(1.05); transition:0.4s ease;}
+body {font-family:Inter,sans-serif;}
+.glass {background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:22px;}
+.heroGlow {background:radial-gradient(circle at center,#2563eb55,transparent 60%);} 
+.card3d:hover{transform:translateY(-6px) scale(1.04);transition:.4s}
+.fade{animation:fade 1.2s ease forwards}
+@keyframes fade{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
@@ -25,79 +26,79 @@ function App(){
 const [dark,setDark]=React.useState(true);
 
 return (
-<div className={dark?"bg-gradient-to-br from-black via-gray-900 to-black text-white":"bg-gray-100 text-black"}>
+<div className={dark?"bg-black text-white":"bg-gray-100 text-black"}>
 
-{/* NAV */}
-<nav className="flex justify-between items-center px-8 py-4 sticky top-0 backdrop-blur z-50">
-<h1 className="text-2xl font-bold">Sourabh Paswan</h1>
+{/* NAVBAR */}
+<nav className="flex justify-between items-center px-10 py-5 sticky top-0 backdrop-blur z-50">
+<h1 className="text-2xl font-extrabold tracking-wide">Sourabh Paswan</h1>
 <div className="flex gap-4">
 <button onClick={()=>setDark(!dark)} className="glass px-4 py-1">Mode</button>
 <a href="https://wa.me/918103665109" target="_blank" className="bg-green-500 px-5 py-1 rounded-full">WhatsApp</a>
 </div>
 </nav>
 
-{/* HERO */}
-<section className="min-h-screen flex flex-col justify-center items-center text-center px-6 fade">
+{/* HERO SECTION */}
+<section className="min-h-screen flex flex-col justify-center items-center text-center heroGlow fade px-6">
 <img src="your-photo.jpg" className="w-44 h-44 rounded-full shadow-2xl mb-6 object-cover"/>
-<h1 className="text-5xl font-bold mb-4">Customer Support Specialist</h1>
-<p className="max-w-xl opacity-80 mb-6">
-Helping global businesses deliver exceptional customer experience through voice, chat, email, and CRM support.
+<h1 className="text-6xl font-extrabold mb-4">Customer Experience Specialist</h1>
+<p className="max-w-xl opacity-80 mb-8 text-lg">
+Delivering world-class customer support for global brands with strong CRM expertise, communication excellence, and proven customer satisfaction impact.
 </p>
-<div className="flex gap-4">
-<a href="resume.pdf" download className="bg-blue-600 px-6 py-3 rounded-full">Download Resume</a>
-<a href="#contact" className="glass px-6 py-3">Hire Me</a>
+<div className="flex gap-5">
+<a href="resume.pdf" download className="bg-blue-600 px-8 py-3 rounded-full shadow-xl">Download Resume</a>
+<a href="#contact" className="glass px-8 py-3">Hire Me</a>
 </div>
 </section>
 
-{/* CUSTOMER SUPPORT TYPES */}
-<section className="max-w-6xl mx-auto p-12 fade">
-<h2 className="text-4xl font-bold text-center mb-10">Customer Support Expertise</h2>
+{/* EXPERTISE */}
+<section className="max-w-6xl mx-auto p-14 fade">
+<h2 className="text-4xl font-bold text-center mb-12">Core Expertise</h2>
 <div className="grid md:grid-cols-3 gap-8">
-<div className="glass p-6 card3d">
-<h3 className="font-bold mb-2">Voice Support</h3>
-<p>Handled international calls resolving logistics, order, and financial issues.</p>
+<div className="glass p-7 card3d">
+<h3 className="font-bold mb-3">Voice Support</h3>
+<p>International inbound/outbound customer calls resolving logistics, finance, and order issues.</p>
 </div>
-<div className="glass p-6 card3d">
-<h3 className="font-bold mb-2">Chat & Email</h3>
-<p>Non-voice customer assistance with fast response and documentation.</p>
+<div className="glass p-7 card3d">
+<h3 className="font-bold mb-3">Chat & Email Support</h3>
+<p>Fast, professional written communication improving customer satisfaction.</p>
 </div>
-<div className="glass p-6 card3d">
-<h3 className="font-bold mb-2">CRM Operations</h3>
-<p>Ticket management, reporting, customer insights, workflow optimization.</p>
+<div className="glass p-7 card3d">
+<h3 className="font-bold mb-3">CRM & Operations</h3>
+<p>Ticketing systems, documentation, reporting, workflow optimization.</p>
 </div>
 </div>
 </section>
 
-{/* WHY HIRE */}
-<section className="max-w-5xl mx-auto p-10 fade">
-<h2 className="text-4xl font-bold text-center mb-6">Why Recruiters Hire Me</h2>
-<div className="grid md:grid-cols-2 gap-6">
-<div className="glass p-5">✔ 2+ Years BPO Experience</div>
-<div className="glass p-5">✔ Amazon + Insurance Support</div>
-<div className="glass p-5">✔ International Client Handling</div>
-<div className="glass p-5">✔ Customer Satisfaction Focus</div>
+{/* IMPACT SECTION */}
+<section className="p-14 fade">
+<h2 className="text-4xl font-bold text-center mb-10">Professional Impact</h2>
+<div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+<div className="glass p-6">✔ Improved customer satisfaction through efficient resolution</div>
+<div className="glass p-6">✔ Supported Amazon North America customer operations</div>
+<div className="glass p-6">✔ Insurance claims & policy support expertise</div>
+<div className="glass p-6">✔ Remote global team collaboration</div>
 </div>
 </section>
 
 {/* TESTIMONIALS */}
-<section className="p-12 fade">
-<h2 className="text-4xl font-bold text-center mb-8">Recruiter Testimonials</h2>
+<section className="p-14 fade">
+<h2 className="text-4xl font-bold text-center mb-10">Recruiter Feedback</h2>
 <div className="max-w-4xl mx-auto space-y-6">
-<div className="glass p-6">⭐ "Strong communicator and dependable support professional." – Supervisor</div>
-<div className="glass p-6">⭐ "Great at handling customers calmly and efficiently." – Manager</div>
+<div className="glass p-6">⭐ "Excellent communication skills and professionalism." – Team Lead</div>
+<div className="glass p-6">⭐ "Consistent performer with strong customer focus." – Operations Manager</div>
 </div>
 </section>
 
 {/* CONTACT */}
-<section id="contact" className="text-center p-12 fade">
+<section id="contact" className="text-center p-14 fade">
 <h2 className="text-4xl font-bold mb-6">Contact</h2>
 <p>Email: adhyanshpaswan09@gmail.com</p>
 <p>Phone: +91 8103665109, 9691352809</p>
 <p>Indore, India</p>
 </section>
 
-<footer className="text-center p-6 opacity-70">
-© 2026 Sourabh Paswan Recruiter Portfolio
+<footer className="text-center p-6 opacity-60">
+© 2026 Sourabh Paswan Premium Portfolio
 </footer>
 
 </div>
